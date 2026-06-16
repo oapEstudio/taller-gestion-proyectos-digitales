@@ -39,8 +39,13 @@ export function ProviderCard({ provider }: { provider: Provider }) {
           <ShieldCheck size={12} />
           Documentacion validada
         </Badge>
+        {provider.featured ? <Badge tone="accent">Respuesta prioritaria</Badge> : null}
       </div>
       <p className="provider-card__description">{provider.highlight}</p>
+      <div className="provider-card__trust">
+        <span>{provider.responseTime}</span>
+        <span>{provider.trustBadges[0]}</span>
+      </div>
       <Link
         to={`/provider/${provider.id}`}
         className={getButtonClassName({ variant: 'secondary', fullWidth: true })}

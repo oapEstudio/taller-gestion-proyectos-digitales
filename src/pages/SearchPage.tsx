@@ -92,6 +92,13 @@ export function SearchPage() {
           </div>
           <Badge tone="accent">{filteredProviders.length} proveedores</Badge>
         </div>
+        <div className="search-intro-card">
+          <strong>Resultados priorizados por confianza y velocidad</strong>
+          <p>
+            Compara reputacion, documentacion validada y tiempo estimado antes de
+            contratar.
+          </p>
+        </div>
       </section>
       <section className="stack-cards">
         {filteredProviders.length > 0 ? (

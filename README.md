@@ -71,3 +71,13 @@ export default defineConfig([
   },
 ])
 ```
+
+## GitHub release and deploy
+
+This project is configured to deploy to GitHub Pages from a tagged release.
+
+1. Configure Pages in GitHub to use `GitHub Actions`.
+2. Create and push a tag such as `v0.1.0` with `git tag v0.1.0` and `git push origin v0.1.0`.
+3. The workflow `.github/workflows/release.yml` builds the app, publishes a GitHub Release with the generated bundle, and deploys the site to Pages.
+
+If you need a custom public path, define `VITE_BASE_PATH` in the workflow or repository variables.

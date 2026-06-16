@@ -56,6 +56,10 @@ export function RatingPage() {
           <Badge tone="success">Completado</Badge>
           <h2>{activeOrderServices[0].title}</h2>
           <p>{activeOrderProvider.name}</p>
+          <div className="rating-summary-card__stats">
+            <span>Servicio cerrado correctamente</span>
+            <span>Ayuda a priorizar mejores proveedores</span>
+          </div>
         </Card>
       </section>
 

@@ -61,6 +61,17 @@ export function CheckoutPage() {
       header={<Header title="Pago" subtitle="Confirma y abona el pedido" showBack />}
     >
       <section className="stack-section">
+        <Card tone="soft" className="payment-hero-card">
+          <p className="section-kicker">Checkout corporativo</p>
+          <h2>Pago trazable y listo para facturacion</h2>
+          <p>
+            Confirma proveedor, sucursal y metodo. El servicio quedara programado al
+            instante.
+          </p>
+        </Card>
+      </section>
+
+      <section className="stack-section">
         <OrderSummary
           title="Resumen del pedido"
           provider={cartProvider}
@@ -121,7 +132,9 @@ export function CheckoutPage() {
                     <strong>{method.label}</strong>
                     <p>{method.details}</p>
                   </div>
-                  <Icon size={18} />
+                  <span className="option-card__icon">
+                    <Icon size={18} />
+                  </span>
                 </label>
               )
             })}
@@ -137,6 +150,10 @@ export function CheckoutPage() {
             <p>{user.billingProfile}</p>
           </div>
         </Card>
+        <div className="detail-chip-row">
+          <span className="detail-chip">Total ${total.toLocaleString('es-AR')}</span>
+          <span className="detail-chip">Pago seguro</span>
+        </div>
       </section>
 
       <section className="stack-section">

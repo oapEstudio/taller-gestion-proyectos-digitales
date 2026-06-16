@@ -27,6 +27,10 @@ export function OrderSummary({
         </div>
         <div className="provider-mini-logo">{provider.shortName}</div>
       </div>
+      <div className="order-summary__provider-meta">
+        <span>{provider.highlight}</span>
+        <span>{provider.responseTime}</span>
+      </div>
       <div className="order-summary__items">
         {services.map((service) => (
           <div key={service.id} className="order-summary__row">

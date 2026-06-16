@@ -1,8 +1,10 @@
 import {
   Bell,
+  Building2,
   Droplets,
   Flame,
   Hammer,
+  ShieldCheck,
   Snowflake,
   Star,
   UserCircle2,
@@ -86,6 +88,26 @@ export function HomePage() {
           onSubmit={() => submitSearch(query)}
           placeholder="Buscar servicios: plomeria, gas, electricidad..."
         />
+        <Card className="dashboard-card">
+          <div className="dashboard-card__copy">
+            <p className="section-kicker">Panel operativo</p>
+            <h2>Coordina proveedores confiables para cada sucursal</h2>
+            <p>
+              {user.companyName} centraliza mantenimiento, pagos y seguimiento en un
+              solo flujo.
+            </p>
+          </div>
+          <div className="dashboard-card__stats">
+            <div className="metric-pill">
+              <Building2 size={15} />
+              <span>{user.branches.length} sucursales activas</span>
+            </div>
+            <div className="metric-pill metric-pill--success">
+              <ShieldCheck size={15} />
+              <span>Proveedores validados</span>
+            </div>
+          </div>
+        </Card>
       </section>
 
       {flashMessage ? (
@@ -138,6 +160,10 @@ export function HomePage() {
                 </div>
                 <h3>{provider.name}</h3>
                 <p>{provider.highlight}</p>
+                <div className="mini-provider-card__trust">
+                  <span>{provider.responseTime}</span>
+                  <span>{provider.zone}</span>
+                </div>
                 <div className="mini-provider-card__meta">
                   <span>
                     <Star size={14} fill="currentColor" />
@@ -246,7 +272,12 @@ export function HomePage() {
                   <h3>{provider.name}</h3>
                   <p>{serviceLabel ?? 'Servicio completado'}</p>
                 </div>
-                <StatusBadge status={order.status} />
+                <div className="history-card__side">
+                  <StatusBadge status={order.status} />
+                  <span className="history-card__amount">
+                    ${order.total.toLocaleString('es-AR')}
+                  </span>
+                </div>
               </Card>
             )
           })}

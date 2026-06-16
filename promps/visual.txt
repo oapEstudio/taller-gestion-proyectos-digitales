@@ -1,0 +1,23 @@
+Ahora mejorá la calidad visual de toda la app para que se parezca más a una app mobile premium.
+
+Objetivo:
+- Mantener la funcionalidad actual.
+- No romper rutas ni navegación.
+- Mejorar estilos, espaciados, cards, botones, badges, headers y bottom navigation.
+- Asegurar consistencia visual entre todas las pantallas.
+- Usar un diseño mobile first con ancho máximo de 430px.
+- Mejorar la jerarquía visual.
+- Hacer que los estados Programado, En camino, En progreso, Finalizado sean claros.
+- Hacer que los proveedores validados y destacados se vean confiables.
+- Mantener español en toda la UI.
+- No agregar backend.
+- No agregar dependencias innecesarias.
+
+Revisá especialmente:
+- Home
+- Listado de proveedores
+- Perfil del proveedor
+- Carrito
+- Checkout
+- Seguimiento
+- Calificación

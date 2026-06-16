@@ -77,6 +77,16 @@ export function ProviderPage() {
               </Badge>
             ))}
           </div>
+          <div className="provider-hero__trust-grid">
+            <div className="trust-panel">
+              <span>Tiempo de respuesta</span>
+              <strong>{provider.responseTime}</strong>
+            </div>
+            <div className="trust-panel">
+              <span>Cobertura</span>
+              <strong>{provider.zone}</strong>
+            </div>
+          </div>
         </Card>
       </section>
 
@@ -86,7 +96,12 @@ export function ProviderPage() {
             <p className="section-kicker">Servicios</p>
             <h2>Selecciona lo que necesitas</h2>
           </div>
+          <Badge tone="accent">Cotizacion inmediata</Badge>
         </div>
+        <p className="section-helper">
+          Agrega uno o varios trabajos para consolidar la visita tecnica en una sola
+          orden.
+        </p>
         <div className="stack-cards">
           {providerServices.map((service) => (
             <ServiceItem

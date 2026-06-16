@@ -1,5 +1,6 @@
 import {
   createBrowserRouter,
+  createHashRouter,
   Navigate,
   Outlet,
   RouterProvider,
@@ -42,7 +43,7 @@ function LoginGate() {
   return <LoginPage />
 }
 
-const router = createBrowserRouter([
+const routes = [
   {
     path: '/',
     element: <RootRedirect />,
@@ -92,7 +93,12 @@ const router = createBrowserRouter([
       },
     ],
   },
-])
+]
+
+const createRouter =
+  import.meta.env.BASE_URL === '/' ? createBrowserRouter : createHashRouter
+
+const router = createRouter(routes)
 
 export function AppRouter() {
   return <RouterProvider router={router} />

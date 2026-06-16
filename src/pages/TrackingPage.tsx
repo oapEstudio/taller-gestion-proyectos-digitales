@@ -62,6 +62,16 @@ export function TrackingPage() {
             <StatusBadge status={currentStatus} />
           </div>
           <p className="tracking-eta">Llega en {activeOrder.etaMinutes} min</p>
+          <div className="tracking-highlights">
+            <div className="tracking-highlight">
+              <span>Estado actual</span>
+              <strong>{currentStatus}</strong>
+            </div>
+            <div className="tracking-highlight">
+              <span>Ventana</span>
+              <strong>{activeOrder.scheduledTime}</strong>
+            </div>
+          </div>
           <div className="detail-stack">
             <div className="detail-row">
               <span>Direccion</span>
@@ -83,7 +93,18 @@ export function TrackingPage() {
                   .join(' ')}
               >
                 <span className="timeline__dot" />
-                <strong>{step}</strong>
+                <div className="timeline__content">
+                  <strong>{step}</strong>
+                  <p>
+                    {step === 'Programado'
+                      ? 'Orden confirmada y agenda reservada.'
+                      : step === 'En camino'
+                        ? 'Tecnico asignado rumbo a la sucursal.'
+                        : step === 'En progreso'
+                          ? 'Trabajo tecnico en ejecucion.'
+                          : 'Servicio cerrado y listo para evaluar.'}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

@@ -11,5 +11,5 @@ export function StatusBadge({ status }: { status: OrderStatus }) {
           ? 'warning'
           : 'neutral'
 
-  return <Badge tone={tone}>{status}</Badge>
+  return <Badge tone={tone} className={`status-badge status-badge--${tone}`}>{status}</Badge>
 }
